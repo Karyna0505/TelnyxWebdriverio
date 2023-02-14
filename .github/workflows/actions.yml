@@ -21,7 +21,7 @@ jobs:
 
       - name: Tests 
         continue-on-error: true
-        run: npm run wdio
+        run: npm run test:docker
 
       - name: Generate Report
         if: always()
