@@ -1,0 +1,37 @@
+{
+    "name": "webdriverio-tests",
+    "version": "0.1.0",
+    "description": "",
+    "private": true,
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@wdio/allure-reporter": "^8.3.0",
+        "@wdio/cli": "^8.3.3",
+        "@wdio/crossbrowsertesting-service": "^8.3.5",
+        "@wdio/firefox-profile-service": "^8.3.0",
+        "@wdio/local-runner": "^8.3.3",
+        "@wdio/mocha-framework": "^8.3.0",
+        "@wdio/selenium-standalone-service": "^8.3.2",
+        "@wdio/spec-reporter": "^8.3.0",
+        "chromedriver": "^109.0.0",
+        "cross-env": "^7.0.3",
+        "wdio-chromedriver-service": "^8.0.1",
+        "wdio-wait-for": "^3.0.2"
+    },
+    "scripts": {
+        "wdio": "wdio run ./wdio.conf.js",
+        "allure:report": "npx allure generate allure-results/ --clean && npx allure open",
+        "allure:generate": "npx allure generate allure-results --clean",
+        "report:open": "npx allure open",
+        "test:docker": "npx wdio run docker.conf.js",
+        "test:chrome": "npx wdio run wdio.chrome.conf.js",
+        "test:edge": "npx wdio run wdio.edge.conf.js",
+        "test:firefox": "npx wdio run wdio.firefox.conf.js",
+        "test:careers-file": "npx run wdio.conf.js --spec ./test/specs/careers.e2e.js"
+    },
+    "dependencies": {
+        "wdio-docker-service": "^3.2.1"
+    }
+}
