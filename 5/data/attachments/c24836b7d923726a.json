@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"[aria-label=\"close and deny\"]~div>div>button\"}\n  (Session info: headless MicrosoftEdge=110.0.1587.41)",
+  "stacktrace": "#0 0x55f560b6df63 <unknown>\n#1 0x55f5608ff0f1 <unknown>\n#2 0x55f56093b54f <unknown>\n#3 0x55f56093b801 <unknown>\n#4 0x55f56097ae34 <unknown>\n#5 0x55f5609613ad <unknown>\n#6 0x55f560978dd6 <unknown>\n#7 0x55f5609610d3 <unknown>\n#8 0x55f560930511 <unknown>\n#9 0x55f560931817 <unknown>\n#10 0x55f560bb2848 <unknown>\n#11 0x55f560bb4f50 <unknown>\n#12 0x55f560bb486b <unknown>\n#13 0x55f560bb5725 <unknown>\n#14 0x55f560b9ff7b <unknown>\n#15 0x55f560bb5b40 <unknown>\n#16 0x55f560b942e5 <unknown>\n#17 0x55f560bd3c78 <unknown>\n#18 0x55f560bd3db0 <unknown>\n#19 0x55f560beda0b <unknown>\n#20 0x7f54138da609 start_thread\n"
+}

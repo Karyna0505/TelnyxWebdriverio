@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "header li:nth-child(6)>div>div"
+}
