@@ -77,13 +77,21 @@ class Partners {
         await this.partnerForm.scrollIntoView({ block: 'center', inline: 'center'});
     }
 
-    async fillingFormValidData(name, surname, email) {
+    async setName(name) {
         await this.nameField.setValue(name);
         let inputName = await this.nameField.getValue()
         await expect(inputName === name);
+    
+    }
+
+    async setSurname(surname) {
         await this.surnameField.setValue(surname);
         let inputSurname = await this.surnameField.getValue()
         await expect(inputSurname === surname);
+    
+    }
+
+    async setEmail(email) {
         await this.emailField.setValue(email);
         let inputEmail = await this.emailField.getValue()
         await expect(inputEmail === email);
@@ -97,13 +105,7 @@ class Partners {
         await this.submitButton.click();
     }
 
-    async fillingFormInvalidData(name, surname, invalidEmail) {
-        await this.nameField.setValue(name);
-        let inputName = await this.nameField.getValue()
-        await expect(inputName === name);
-        await this.surnameField.setValue(surname);
-        let inputSurname = await this.surnameField.getValue()
-        await expect(inputSurname === surname);
+    async setInvalidEmail(invalidEmail){
         await this.emailField.setValue(invalidEmail);
         let inputEmail = await this.emailField.getValue()
         await expect(inputEmail === invalidEmail);

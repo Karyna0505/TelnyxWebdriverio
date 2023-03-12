@@ -5,7 +5,7 @@ beforeEach('Open site and Accept cookies', async () => {
 
     await browser.setWindowSize(1920, 1080);
     await OpenSite.open('/');
-    await browser.pause(400);
+    await OpenSite.acceptButton.waitForExist({ timeout: 1000 });
     await OpenSite.acceptCookies();
     await AboutTelnyx.hoverOnCompany();
     await AboutTelnyx.visibleCompanyList();
@@ -22,13 +22,13 @@ describe('Check links on the "About Us" page.', () => {
         await AboutTelnyx.scrollToTheBanner();
         await expect(AboutTelnyx.whereWeAreBanner).toBeDisplayed();
 
-        await AboutTelnyx.clickabilityChicagoLink();
+        await AboutTelnyx.clickChicagoLink();
         await expect(AboutTelnyx.chicagoLocationLink).toHaveAttributeContaining('href', 'maps');
-        await AboutTelnyx.clickabilityDublinLink();
+        await AboutTelnyx.clickDublinLink();
         await expect(AboutTelnyx.dublinLocationLink).toHaveAttributeContaining('href', 'maps');
-        await AboutTelnyx.clickabilityWarsawLink();
+        await AboutTelnyx.clickWarsawLink();
         await expect(AboutTelnyx.warsawLocationLink).toHaveAttributeContaining('href', 'maps');
-        await AboutTelnyx.clickabilityAmsterdamLink();
+        await AboutTelnyx.clickAmsterdamLink();
         await expect(AboutTelnyx.amsterdamLocationLink).toHaveAttributeContaining('href', 'maps');
 
     })
@@ -40,8 +40,6 @@ describe('Check links on the "About Us" page.', () => {
         await expect(AboutTelnyx.readyToStartBanner).toHaveText('Ready to Get Started?');
 
         await AboutTelnyx.clickTryButton();
-        // await expect(AboutTelnyx.registrationForm).toHaveText('Create a free account');
-        //this test is failed because the site has a bug)
 
     })
     

@@ -2,13 +2,16 @@ const OpenSite = require('../pageobjects/openSite.page');
 const AboutTelnyx = require('../pageobjects/aboutTelnyx.page');
 const Partners = require('../pageobjects/partners.page');
 
-
+let name = "Test";
+let surname ="Test";
+let validEmail = "test2023@gmail.com";
+let invalidEmail = "test2023gmail.com";
 
 beforeEach('Open site and Accept cookies', async () => {
 
     await browser.setWindowSize(1920, 1080);
     await OpenSite.open('/');
-    await browser.pause(400);
+    await OpenSite.acceptButton.waitForExist({ timeout: 1000 });
     await OpenSite.acceptCookies();
     await AboutTelnyx.hoverOnCompany();
     await AboutTelnyx.visibleCompanyList();
@@ -34,13 +37,13 @@ describe('Check links on the "Partners" page.', () => {
 
         await Partners.scrollToThePartnerForm();
         await expect(Partners.partnerFormTitle).toHaveTextContaining('Become a Telnyx Partner');
-        await browser.pause(500);
+        await Partners.partnerFormTitle.waitForExist({ timeout: 1000 });
 
-        await Partners.fillingFormValidData("Test", "Test", "test2023@gmail.com");
-        await browser.pause(500);
+        await Partners.setName(name);
+        await Partners.setSurname(surname);
+        await Partners.setEmail(validEmail);
         await Partners.selectUseCase();
         await Partners.clickSubmitButton();
-        await browser.pause(500);
         await expect(browser).toHaveUrlContaining('partnerships?aliId');
 
     })
@@ -49,13 +52,13 @@ describe('Check links on the "Partners" page.', () => {
 
         await Partners.scrollToThePartnerForm();
         await expect(Partners.partnerFormTitle).toHaveTextContaining('Become a Telnyx Partner');
-        await browser.pause(500);
+        await Partners.partnerFormTitle.waitForExist({ timeout: 1000 });
 
-        await Partners.fillingFormInvalidData("Test", "Test", "test2023gmail.com");
-        await browser.pause(500);
+        await Partners.setName(name);
+        await Partners.setSurname(surname);
+        await Partners.setEmail(invalidEmail);
         await Partners.selectUseCase();
         await Partners.clickSubmitButton();
-        await browser.pause(500);
         await expect(Partners.errorMessageEmail).toHaveTextContaining('Must be valid email.');
 
     })
@@ -64,17 +67,14 @@ describe('Check links on the "Partners" page.', () => {
 
         await Partners.scrollToThePartnerForm();
         await expect(Partners.partnerFormTitle).toHaveTextContaining('Become a Telnyx Partner');
-        await browser.pause(500);
+        await Partners.partnerFormTitle.waitForExist({ timeout: 1000 });
 
         await Partners.clickSubmitButton();
         await expect(Partners.errorMessageName).toBeDisplayed();
-        await browser.pause(500);
         await Partners.clickSurnameField(); 
         await expect(Partners.errorMessageSurname).toBeDisplayed();
-        await browser.pause(500);
         await Partners.clickEmailField();
         await expect(Partners.errorMessageEmail).toBeDisplayed()
-        await browser.pause(500);
 
     })
 

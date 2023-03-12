@@ -5,7 +5,7 @@ beforeEach('Open site and Accept cookies', async () => {
 
     await browser.setWindowSize(1920, 1080);
     await OpenSite.open('/');
-    await browser.pause(400);
+    await OpenSite.acceptButton.waitForExist({ timeout: 1000 });
     await OpenSite.acceptCookies();
     await Resources.hoverResourcesLink();
     await Resources.visibleResourcesList();

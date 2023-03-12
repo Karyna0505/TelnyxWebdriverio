@@ -23,13 +23,6 @@ WebdriverIO/Allure-report/Docker "TELNYX" project
 ### Docker preparation
 
 - Install docker desktop
-- Running docker
-
-        docker-compose up
-
-- Stop docker
-
-        docker-compose down
 
 ### Running test with Docker
 
@@ -41,9 +34,10 @@ WebdriverIO/Allure-report/Docker "TELNYX" project
 
         npm run wdio
 
-More details how to run on the link More details how to run on the link https://docs.cypress.io/guides/references/configuration#Specifying-an-Alternative-Config-File
-or in package.json file in scripts
+3. Stop docker
 
+        docker-compose down
+        
 ### Allure Report
 
 To generate a report for all specs in the integration folder of the WebdriverIO project, run the command given below −

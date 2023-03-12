@@ -105,19 +105,19 @@ class AboutTelnyx {
         await this.whereWeAreBanner.scrollIntoView({ block: 'center', inline: 'center' });
     }
 
-    async clickabilityChicagoLink() {
+    async clickChicagoLink() {
         await this.chicagoLocationLink.isClickable();
     }
 
-    async clickabilityDublinLink() {
+    async clickDublinLink() {
         await this.dublinLocationLink.isClickable();
     }
 
-    async clickabilityWarsawLink() {
+    async clickWarsawLink() {
         await this.warsawLocationLink.isClickable();
     }
 
-    async clickabilityAmsterdamLink() {
+    async clickAmsterdamLink() {
         await this.amsterdamLocationLink.isClickable();
     }
     

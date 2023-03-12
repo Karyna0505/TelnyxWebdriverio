@@ -5,7 +5,7 @@ beforeEach('Open site and Accept cookies', async () => {
 
     await browser.setWindowSize(1920, 1080);
     await OpenSite.open('/');
-    await browser.pause(400);
+    await OpenSite.acceptButton.waitForExist({ timeout: 1000 });
     await OpenSite.acceptCookies();
     await Network.clickNetworkLink();
     await expect(Network.networkPageTitle).toBeDisplayed();
@@ -18,7 +18,6 @@ describe('Check links on the "Network" page.', () => {
     it('ID_0014 Check sign up on the "Network" page.', async () => {
 
         await Network.clickTryButton();
-        await browser.pause(500);
         await expect(browser).toHaveUrlContaining('sign-up');
         await expect(Network.registrationFormTitle).toHaveTextContaining('free account');
 
@@ -29,10 +28,10 @@ describe('Check links on the "Network" page.', () => {
         await Network.scrollToTheCommunicationBanner();
         await expect(Network.communicationBannerTitle).toHaveTextContaining('communication');
         await Network.clickCompetitorsLink();
-        await browser.pause(500);
+        await Network.competitorMap.waitForExist({ timeout: 1000 });
         await expect(Network.competitorMap).toBeDisplayed();
         await Network.clickOurNetworkLink();
-        await browser.pause(500);
+        await Network.ourNetworkMap.waitForExist({ timeout: 1000 });
         await expect(Network.ourNetworkMap).toBeDisplayed();
 
     })
@@ -42,10 +41,10 @@ describe('Check links on the "Network" page.', () => {
         await Network.scrollToTheDifferenceBanner();
         await expect(Network.differenceBannerTitle).toHaveTextContaining('Telnyx difference');
         await Network.clickCompetitorNetworksLink();
-        await browser.pause(500);
+        await Network.competitorDifferenceSchema.waitForExist({ timeout: 1000 });
         await expect(Network.competitorDifferenceSchema).toExist();
         await Network.clickOurNetworkLink2();
-        await browser.pause(500);
+        await Network.ourNetworkSchema.waitForExist({ timeout: 1000 });
         await expect(Network.ourNetworkSchema).toExist();
 
     })
@@ -66,13 +65,13 @@ describe('Check links on the "Network" page.', () => {
         await Network.scrollToTheFaqBlock();
         await expect(Network.faqBlock).toBeDisplayed();
         await Network.clickFirstQuastion();
-        await browser.pause(500);
+        await Network.faq1.waitForExist({ timeout: 1000 });
         await expect(Network.faq1).toExist();
         await Network.clickSecondQuastion();
-        await browser.pause(500);
+        await Network.faq2.waitForExist({ timeout: 1000 });
         await expect(Network.faq2).toExist();
         await Network.clickThirdQustion();
-        await browser.pause(500);
+        await Network.faq3.waitForExist({ timeout: 1000 });
         await expect(Network.faq3).toExist();
 
     })

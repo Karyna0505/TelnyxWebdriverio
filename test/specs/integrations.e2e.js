@@ -1,12 +1,17 @@
 const OpenSite = require('../pageobjects/openSite.page');
 const AboutTelnyx = require('../pageobjects/aboutTelnyx.page');
 const Integrations = require('../pageobjects/integrations.page');
+const Partners = require('../pageobjects/partners.page');
+
+let name = "User";
+let surname ="User";
+let validEmail = "user_test2023@gmail.com";
 
 beforeEach('Open site and Accept cookies', async () => {
 
     await browser.setWindowSize(1920, 1080);
     await OpenSite.open('/');
-    await browser.pause(400);
+    await OpenSite.acceptButton.waitForExist({ timeout: 1000 });
     await OpenSite.acceptCookies();
     await AboutTelnyx.hoverOnCompany();
     await AboutTelnyx.visibleCompanyList();
@@ -30,13 +35,13 @@ describe('Check links on the "Integrations" page.', () => {
 
         await Integrations.scrollToTheBecomeTesterBanner();
         await expect(Integrations.becomeTesterBannerTitle).toHaveTextContaining('Become a Beta Tester');
-        await browser.pause(500);
+        await Integrations.becomeTesterBanner.waitForExist({ timeout: 1000 });
 
-        await Integrations.fillingFormTesterValidData('Test','Test','test2023@gmail.com');
-        await browser.pause(500);
-        await Integrations.selectUseCase();
-        await Integrations.clickSubmitButton();
-        await browser.pause(500);
+        await Partners.setName(name);
+        await Partners.setSurname(surname);
+        await Partners.setEmail(validEmail);
+        await Partners.selectUseCase();
+        await Partners.clickSubmitButton();
         await expect(browser).toHaveUrlContaining('integrations?aliId');
 
     })
