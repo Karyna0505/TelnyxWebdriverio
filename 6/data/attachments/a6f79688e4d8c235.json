@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"section>header>div\"}\n  (Session info: headless MicrosoftEdge=110.0.1587.41)",
+  "stacktrace": "#0 0x560693f9af63 <unknown>\n#1 0x560693d2c0f1 <unknown>\n#2 0x560693d6854f <unknown>\n#3 0x560693d68801 <unknown>\n#4 0x560693da7e34 <unknown>\n#5 0x560693d8e3ad <unknown>\n#6 0x560693da5dd6 <unknown>\n#7 0x560693d8e0d3 <unknown>\n#8 0x560693d5d511 <unknown>\n#9 0x560693d5e817 <unknown>\n#10 0x560693fdf848 <unknown>\n#11 0x560693fe1f50 <unknown>\n#12 0x560693fe186b <unknown>\n#13 0x560693fe2725 <unknown>\n#14 0x560693fccf7b <unknown>\n#15 0x560693fe2b40 <unknown>\n#16 0x560693fc12e5 <unknown>\n#17 0x560694000c78 <unknown>\n#18 0x560694000db0 <unknown>\n#19 0x56069401aa0b <unknown>\n#20 0x7fcd1e9de609 start_thread\n"
+}
